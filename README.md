@@ -24,6 +24,6 @@ An Arduino software to read the temperature and humidity sensor from the ESP8266
 
 | From (ESP)    | To (LM chip)  |
 | ------------- |---------------|
-| ABC           | DO     	|
+| AB            | DO     	|
 | G	        | Ground        | 
 | 3V	 	| Vcc		|
