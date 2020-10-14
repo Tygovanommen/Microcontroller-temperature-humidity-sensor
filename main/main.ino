@@ -9,20 +9,20 @@ char* SSID = "SSID"; // Enter SSID
 char* WIFI_PASSWORD = "WIFI_PASSWORD"; // Enter Password
 String serverName = "serverName"; // Enter Server name (url/ip)
 
+int MIN_INTVL = 5; // Enter send interval (in minutes)
 String ESP_ID = String(ESP.getChipId());
 String API_KEY = "2r08Zz3ZyyLPUE4c3LgWb6";
 
 boolean isDht = false;
 
 void setup(){
-  // Initiate hardware
+   // Initiate hardware
   Serial.begin(9600);
   pinMode(13, OUTPUT);
   dht.begin();
 }
 
 void loop(){ 
-  delay(20000);
 
   // Make sure wifi is connected
   if(!WiFi.status() == WL_CONNECTED){
@@ -55,6 +55,8 @@ void loop(){
 
   // End connection
   http.end();
+
+  delay(1000 * 60 * MIN_INTVL); // Loop everything X minutes
 }
 
 // Get air humidity and temprature values
