@@ -31,7 +31,7 @@ void loop(){
     return;
   }
 
-  // Send data to database
+  // Send data to api
   HTTPClient http;
   
   String data;
